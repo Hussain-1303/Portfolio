@@ -370,51 +370,59 @@ span{
 .service-box i{
     font-size: 8rem;
 }
-.projects{
+.projects {
     background: var(--second-bg-color);
     color: var(--text-color);
+    padding: 5rem 0; /* Added padding for better spacing */
 }
-.projects-box{
+
+.projects-box {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     place-items: center;
-    margin: 5rem 0;
     gap: 3rem;
     row-gap: 5rem;
+    padding: 0 5%; /* Added padding to prevent content from touching edges */
 }
-.project-card{
-    height: 600px;
-    max-width: 450px;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(30px);
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background for better readability */
+    backdrop-filter: blur(20px); /* Reduced blur for a subtle effect */
     border: 2px solid var(--main-color);
-    border-radius: 5rem;
+    border-radius: 2rem; /* Reduced border radius for a modern look */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 2rem;
-    padding: 5rem 2rem;
+    gap: 1.5rem; /* Reduced gap for a more compact look */
+    padding: 2rem 1.5rem; /* Reduced padding for a cleaner card */
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 0 5px var(--main-color);
-    transition: 0.4s ease;
+    box-shadow: 0 0 10px var(--main-color); /* Increased shadow for better depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Simplified transition for smooth effect */
 }
-.project-card:hover{
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color);
-    transform: scale(1.02);
+
+.project-card:hover {
+    box-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color); /* Enhanced hover shadow */
+    transform: translateY(-5px); /* Added slight lift effect on hover */
 }
-.project-card img{
-    max-width: 18vw;
-    object-fit: cover;
+
+.project-card img {
+    max-width: 100%; /* Ensured image responsiveness */
+    height: auto;
+    border-radius: 1rem; /* Rounded corners for the image */
+    margin-bottom: 1.5rem; /* Added margin for spacing */
 }
-.project-card h3{
-    font-size: 3rem;
+
+.project-card h3 {
+    font-size: 2.5rem; /* Adjusted font size for readability */
+    margin-bottom: 1rem; /* Reduced margin for a compact look */
 }
-.project-card P{
-    font-size: 1.6rem;
+
+.project-card p {
+    font-size: 1.4rem; /* Slightly smaller font size for better readability */
+    color: var(--text-color);
 }
 .contact{
     background-color: var(--bg-color);
@@ -507,6 +515,75 @@ span{
     text-align: center;
     font-size: 16px;
     color: text;
+}
+.container{
+	width: 100%;
+	padding: 35px 10%;
+}
+.container{
+	padding-right: calc(10% - 30px);
+}
+main.row{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+}
+.col header.title{
+	font-family: helvetica;
+    font-size: large;
+	color: var(--main-color);
+	padding: 0px 0px 20px 30px;
+}
+.col .contents{
+	padding: 0px 30px;
+	border-left: 2px solid #bababa;
+}
+.col .contents .box{
+	position: relative;
+	padding: 20px;
+	border: 1px solid #eaeaea;
+	background-color: #ffffff;
+	cursor: pointer;
+	transition: all 0.4s;
+	margin-bottom: 20px;
+}
+.col .contents .box:hover{
+	box-shadow: 0px 3px 12px 0px #ccc;
+	border: 1px solid transparent;
+}
+.col .contents .box::before{
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	right: calc(100% + 22px);
+	top: 0;
+	background-color: var(--main-color);
+	border: 2px solid white;
+}
+.box h4{
+	position: relative;
+	color: var(--main-color);
+}
+.box h3{
+	font-size: 19px;
+	padding: 10px 0px 6px;
+	font-family: helvetica;
+	color: #444;
+}
+.box p{
+	line-height: 1.2;
+	color: #666;
+	font-size: 17px;
+}
+@media(max-width: 768px){
+	main.row{
+		grid-template-columns: 1fr;
+	}
+	.row .col:nth-child(2){
+		margin-top: 30px;
+	}
 }
 @media(max-width:1285px){
     html{
