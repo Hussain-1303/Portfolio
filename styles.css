@@ -22,18 +22,18 @@ body{
     background: var(--bg-color);
     color: var(--text-color);
 }
-.header{
-    position: fixed;
+.header {
+    position: fixed;  /* Keeps the header fixed at the top */
     top: 0;
     left: 0;
-    padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    padding: 2rem 12%;  /* Adjust padding as needed */
+    background: rgba(0, 0, 0, 0.8);  /* Semi-transparent background */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100%;
-    width: 100%;
+    z-index: 1000;  /* Ensures the header stays on top of other content */
 }
 .logo{
     font-size: 3rem;
@@ -48,20 +48,20 @@ body{
 .logo span{
     text-shadow: 0 0 25px var(--main-color) ;
 }
-.navbar a{
+.navbar a {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
-    transition: 0.3 ease;
+    transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
 .navbar a:hover,
-.navbar a.active{
+.navbar a.active {
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
-#menu-icon{
+#menu-icon {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
@@ -619,7 +619,7 @@ main.row{
     #menu-icon{
         display: block;
     }
-    .navbar{
+    .navbar {
         position: absolute;
         top: 100%;
         right: 0;
@@ -631,63 +631,75 @@ main.row{
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
         display: none;
-        }
-        .navbar.active{
-            display: block;
-        }
-        .navbar a{
-            display: block;
-            font-size: 2rem;
-            margin: 3rem 0;
-            color: white;
-        }
-        .home{
-            flex-direction: column-reverse;
-            margin: 5rem 4rem;
-            gap: 3rem;
-        }
-        .home-content{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .home-content h3{
-            font-size: 2.6rem;
-        }
-        .home-content h1{
-            font-size: 8rem;
-            margin-top: 3rem;
-        }
-        .home-content p{
-            max-width: 600px;
-            margin-top: 0 auto;
-        }
-        .home-img img{
-            width: 56vw;
-            margin: 3rem 0;
-        }
-        .about{
-            flex-direction: column-reverse;
-            padding: 10rem 9% 10rem;
-        }
-        .about .heading{
-            margin: 3rem 0;
-        }
-        .about img{
-            width: 50vw;
-        }
-        .services h2{
-            margin-bottom: 3rem;
-        }
-        .services-container{
-            grid-template-columns: repeat(1,1fr);
-        }
-        .projects-box{
-            grid-template-columns: repeat(1,1fr);
-        }
-        .projects-box img{
-            min-width: 42rem;
-        }
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+        gap: 3rem;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+
+    .home-content p {
+        max-width: 600px;
+        margin-top: 0 auto;
+    }
+
+    .home-img img {
+        width: 56vw;
+        margin: 3rem 0;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+        padding: 10rem 9% 10rem;
+    }
+
+    .about .heading {
+        margin: 3rem 0;
+    }
+
+    .about img {
+        width: 50vw;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .projects-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .projects-box img {
+        min-width: 42rem;
+    }
 }
